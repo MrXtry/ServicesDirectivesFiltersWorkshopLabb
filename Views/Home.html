@@ -1,3 +1,50 @@
-﻿<div class="col-md-12">
-    <h1 ng-bind="title"></h1>
+﻿<div class="row" ng-init="search = ''">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 ng-bind="title"></h1>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="search">Search</label>
+                    <input type="text"
+                           id="search"
+                           class="form-control"
+                           placeholder="Search..."
+                           ng-model="search" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" ng-repeat="post in posts | filter: { author: search } track by $index">
+
+                <div class="col-md-12">
+                    <h1 ng-bind="post.title"></h1>
+                    <hr />
+                </div>
+
+                <div class="col-md-12" style="background-color:whitesmoke">
+                    <div class="col-md-12">
+                        <h2 ng-bind="post.author"></h2>
+                        <h5><span class="glyphicon glyphicon-time"></span> Post by {{post.author}}, {{post.postDate}}</h5>
+                        <p ng-bind="post.body"></p>
+                    </div>
+
+                    <button type="button"
+                            class="btn btn-info"
+                            ng-click="subscribe(post.author)"
+                            ng-show="subscribedAuthors.indexOf(post.author) == -1">
+                        <span class="glyphicon glyphicon-eye-open"></span> Subscribe
+                    </button>
+
+                    <span ng-show="subscribedAuthors.indexOf(post.author) != -1">
+                        <span class="glyphicon glyphicon-ok"></span> Subscribed
+                    </span>
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+    
