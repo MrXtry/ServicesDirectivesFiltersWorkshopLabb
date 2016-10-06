@@ -16,6 +16,7 @@ angular.module("mainModule")
                 postsApi.updatePost($scope.post)
                     .then(function (data) {
                         $scope.post = data;
+                        $scope.go("/Cms");
                     });
             };
         }

@@ -59,5 +59,31 @@ angular.module("mainModule")
 
                 return deferred.promise;
             };
+
+            this.upvotePost = function (id) {
+                var deferred = $q.defer();
+
+                $http.put(posts + "/upvote/" + id)
+                    .then(function (response) {
+                        deferred.resolve(response.data);
+                    }, function (resopnse) {
+                        deferred.resolve([]);
+                    });
+
+                return deferred.promise;
+            };
+
+            this.downvotePost = function (id) {
+                var deferred = $q.defer();
+
+                $http.put(posts + "/downvote/" + id)
+                    .then(function (response) {
+                        deferred.resolve(response.data);
+                    }, function (response) {
+                        deferred.resolve([]);
+                    });
+
+                return deferred.promise;
+            };
         }
     ]);
