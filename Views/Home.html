@@ -16,7 +16,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12" ng-repeat="post in posts | filter: searchFilter(search) track by $index">
+            <div class="col-md-12" ng-repeat="post in posts track by $index">
 
                 <div class="col-md-12">
                     <h1 ng-bind="post.title"></h1>
@@ -30,8 +30,8 @@
                         <h5><span class="glyphicon glyphicon-time"></span> Post by {{post.author}}, {{post.postDate}}</h5>
                         <p ng-bind="post.body"></p>
                     </div>
-
-                    <button type="button"
+                    <subscribe-button></subscribe-button>
+                    <!--<button type="button"
                             class="btn btn-info"
                             ng-click="subscribe(post.author)"
                             ng-show="subscribedAuthors.indexOf(post.author) == -1">
@@ -40,7 +40,7 @@
 
                     <span ng-show="subscribedAuthors.indexOf(post.author) != -1">
                         <span class="glyphicon glyphicon-ok"></span> Subscribed
-                    </span>
+                    </span>-->
                     <br />
                     <br />
                 </div>

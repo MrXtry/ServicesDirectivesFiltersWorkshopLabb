@@ -1,0 +1,7 @@
+﻿<button type="button" class="btn btn-info" ng-click="subscribe(post.author)" ng-show="subscribedAuthors.indexOf(post.author) == -1">
+    <span class="glyphicon glyphicon-eye-open"></span> Subscribe
+</button>
+
+<button type="button" class="btn btn-success" ng-show="subscribedAuthors.indexOf(post.author) != -1">
+    <span class="glyphicon glyphicon-ok"></span> Subscribed
+</button>

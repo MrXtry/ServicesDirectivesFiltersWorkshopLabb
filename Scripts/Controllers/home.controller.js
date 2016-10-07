@@ -14,20 +14,20 @@ angular.module("mainModule")
                 $scope.saveSubscribedAuthors();
             };
 
-            $scope.searchFilter = function (search) {
-                return function (post) {
+            //$scope.searchFilter = function (search) {
+            //    return function (post) {
                     
-                    if ((post.author != null && post.author == search) || (post.title != null && post.title == search)) {
-                        return true;
-                    }
-                    else if (search == ""){
-                        return true;
-                    }   
-                    else{
-                        return false;
-                    }
-                }
-            }
+            //        if ((post.author != null && post.author == search) || (post.title != null && post.title == search)) {
+            //            return true;
+            //        }
+            //        else if (search == ""){
+            //            return true;
+            //        }   
+            //        else{
+            //            return false;
+            //        }
+            //    }
+            //}
 
             //$scope.searchFilter = function (search) {
             //    return function (item) {
