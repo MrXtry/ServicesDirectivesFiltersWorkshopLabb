@@ -15,12 +15,12 @@
             <div class="col-md-12">
                 <table class="table">
                     <tr>
-                        <th> {{tableTitle}} <span ng-click="getItem(tableTitle)" class="glyphicon glyphicon-resize-small"></span></th>
-                        <th> {{tableAuthor}} <span ng-class="getItem(tableAuthor)" class="glyphicon glyphicon-resize-small"></span></th>
-                        <th> {{tablePostDate}} <span ng-click="getItem(tablePostDate)" class="glyphicon glyphicon-resize-small"></span></th>
+                        <th> {{tableTitle}} <span ng-click="getItem(tableTitle)" class="glyphicon glyphicon-arrow-down"></span></th>
+                        <th> {{tableAuthor}} <span ng-click="getItem(tableAuthor)" class="glyphicon glyphicon-arrow-down"></span></th>
+                        <th> {{tablePostDate}} <span ng-click="getItem(tablePostDate)" class="glyphicon glyphicon-arrow-down"></span></th>
                         <th></th>
                     </tr>
-                    <tr ng-repeat="post in posts |orderObjectBy: 'title' track by $index">
+                    <tr ng-repeat="post in posts |orderObjectBy: objectBy track by $index">
                         <td class="col-md-1" ng-bind="post.title"></td>
                         <td class="col-md-1" ng-bind="post.author"></td>
                         <td class="col-md-1" ng-bind="post.postDate"></td>

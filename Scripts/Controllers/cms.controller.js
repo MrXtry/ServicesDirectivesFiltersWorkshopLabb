@@ -6,12 +6,16 @@ angular.module("mainModule")
         "postsApi",
         function ($scope, postsApi) {
             $scope.title = "CMS";
+            $scope.objectBy = "";
             $scope.tableTitle = "Title";
             $scope.tableAuthor = "Author";
             $scope.tablePostDate = "Post Date";
 
             $scope.getItem = function (text) {
-                console.log(text);
+                var objectBy = text.toLowerCase();
+                objectBy = objectBy.replace(/\s+/g, '');
+                
+                $scope.objectBy = objectBy;
             }
 
             $scope.deletePost = function (post) {

@@ -1,5 +1,7 @@
 ﻿/// <reference path="../angular.js" />
 
+//TODO: clean up the code...
+
 angular.module("mainModule")
     .filter("orderObjectBy", function () {
         return function (input, attribute) {
@@ -43,7 +45,7 @@ angular.module("mainModule")
             else if (attribute == "author") {
                 array.sort(compareAuthor);
             }
-            else if (attribute == "postDate") {
+            else if (attribute == "postdate") {
                 array.sort(comparePostDate);
             }
 

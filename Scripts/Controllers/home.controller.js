@@ -29,27 +29,7 @@ angular.module("mainModule")
             //    }
             //}
 
-            //$scope.searchFilter = function (search) {
-            //    return function (item) {
-            //        //console.log(item.author);
-            //        if (item.author === "Ninib") {
-            //            return item.author === "Ninib";
-            //        }
-            //        else
-            //            return item;
-            //    };
-            //    //console.log($scope.search);
-            //    //if (posts.author == $scope.search) {
-            //    //    return true;
-            //    //} else {
-            //    //    return true;
-            //    //}
-            //    //return posts;
-            //};
-
-
-            //console.log($scope.searchFilter(1));
-
+            
             $scope.upvotePost = function (post) {
                 postsApi.upvotePost(post.id)
                     .then(function () {
